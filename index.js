@@ -30,12 +30,14 @@ app.get('/v1/api/send-email', function(req, res) {
     <html>
     <body>
     <div style="font-size: 15px;">
-      <p style="font-weight: bold;">Hi, ${name}</p>
+      <p style="font-weight: bold;">Hi ${name},</p>
+      <p>You have few JIRAs that have missing acceptance criteria, description or storypoints</p>
+      <p>Please update following JIRAs before refinement meeting:</p>
       <p>${message}</p>
     </div>
     </body>
     </html>`;
-  const subject = "You have a message from sams jira bot!";
+  const subject = "You have a message from J.A.R.V.I.S!";
   sendmail({
     from: fromEmailId,
     to: [toEmailId],
